@@ -1,16 +1,12 @@
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/hero-img.png';
-import sun from '../../assets/sun.svg';
-import moon from '../../assets/moon.svg';
+import themeIcon from '../../assets/sun.svg';
 import githubIcon from '../../assets/github-light.svg';
 import linkedinIcon from '../../assets/linkedin-light.svg';
 import CV from '../../assets/cv.pdf';
-import { useTheme } from '../../common/ThemeContext';
 
 function Hero() {
   const { theme, toggleTheme } = useTheme();
-
-  const themeIcon = theme === 'light' ? sun : moon;
 
   return (
     <section id="hero" className={styles.container}>
@@ -24,7 +20,6 @@ function Hero() {
           className={styles.colorMode}
           src={themeIcon}
           alt="Color mode icon"
-          onClick={toggleTheme}
         />
       </div>
       <div className={styles.info}>
