@@ -1,5 +1,4 @@
 import React, {
-  Children,
   createContext,
   useContext,
   useEffect,
@@ -20,7 +19,7 @@ export const ThemeProvider = ({ Children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  toggleTheme = () => {
+  const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
 
     return (
