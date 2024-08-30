@@ -5,7 +5,7 @@ import React, {
   useState,
 } from 'react';
 
-const ThemeContext = createContext;
+const ThemeContext = createContext();
 
 export const useTheme = () => useContext(ThemeContext);
 
@@ -21,11 +21,11 @@ export const ThemeProvider = ({ Children }) => {
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-
-    return (
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        {Children}
-      </ThemeContext.Provider>
-    );
   };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {Children}
+    </ThemeContext.Provider>
+  );
 };
