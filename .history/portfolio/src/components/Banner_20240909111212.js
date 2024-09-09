@@ -64,21 +64,15 @@ export const Banner = () => {
                     {({ isVisible }) => 
                     <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                         <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{`Hi! I'm Brian`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer", "Fullstack Developer" ]'><span className="wrap">on{text}<span className="wrap">{text}</span></span></h1>
+                        <h1>{`Hi! I'm Brian`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer", "Fullstack Developer" ]'><span className="wrap">on{text}<span className="wrap">{text}</span>
+                        </span>
+                        </h1>
                         <p>This is my portfolio, demonstrating my skill and projects I've worked on, completed.</p>
                         <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={25} /></button>
                     </div>}
                     </TrackVisibility>
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <TrackVisibility>
-                        {({ isVisible }) => 
-                        <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                            <img src={headerImg} alt="Header Img" />
-                        </div>
-                        }
-                        </TrackVisibility>
-                    </Col>
+
                 </Row>
             </Container>
         </section>
