@@ -21,7 +21,7 @@ export const Banner = () => {
 
   useEffect(() => {
     let ticker = setInterval(() => {
-      ticker();
+      tick();
     }, delta);
 
     return () => {
@@ -47,6 +47,35 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === '') {
+      setIsDeleting(false);
+      setloopNum(loopNum + 1);
+      setIndex(1);
+      setDelta(500);
+    } else {
+      setIndex(prevIndex => prevIndex + 1);
     }
+
+    return (
+        <section className="banner" id="home">
+            <Container>
+                <Row className="align-items-center">
+                    <Col xs={12} md={6} xl={7}>
+                    <TrackVisibility>
+                    {({ isVisible }) => 
+                    <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                        <span className="tagline">Welcome to my Portfolio</span>
+                        <h1>{`Hi! I'm Brian`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer", "Fullstack Developer" ]'><span className="wrap">on{text}<span className="wrap">{text}</span>
+                        </span>
+                        </h1>
+                        <p>This is my prtfolio, demonstrating my skill and projects I've worked on, completed.</p>
+                        <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={25} /></button>
+                    </div>
+                    }
+                    </TrackVisibility>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
+    )
   };
 };
